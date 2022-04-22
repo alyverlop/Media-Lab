@@ -18,7 +18,8 @@ void ReadFile(vector<Book>& bookV, vector <Movie>& movieV, vector <Song>& songV)
 	Song tempSong;
 	vector<string> row;
 	vector<string> errorV;
-	string  tempInput; // Input string
+	string tempInput; // Input string
+	string input; // keeps whole stream
 	stringstream inSS(tempInput);
 
 	ifstream fin;
@@ -39,14 +40,14 @@ void ReadFile(vector<Book>& bookV, vector <Movie>& movieV, vector <Song>& songV)
 			inSS.clear(); // clears previous stream
 			inSS.str(tempInput); // enters new stream
 
-			i = 0;
+			input = tempInput; // keeps whole string stream for error report
 
 			while (getline(inSS, tempInput, ',')) { // breaks stream up into each section
 				row.push_back(tempInput); // assigns everything into row vector
 			}
 
 			if (!IsNumber(row[3])) { // checks if there is an error by checking if the third input is a number
-				errorV.push_back(tempInput); //pushes into error vector
+				errorV.push_back(input); //pushes into error vector
 			}
 			else { // if no errors
 				tempBook.setType(type);
@@ -72,6 +73,8 @@ void ReadFile(vector<Book>& bookV, vector <Movie>& movieV, vector <Song>& songV)
 
 			inSS.clear(); // clears previous stream
 			inSS.str(tempInput); // enters new stream
+
+			input = tempInput; // keeps whole string stream for error report
 
 			while (getline(inSS, tempInput, ',')) { // breaks stream up into each section
 				row.push_back(tempInput); // assigns everything into row vectore
@@ -104,6 +107,8 @@ void ReadFile(vector<Book>& bookV, vector <Movie>& movieV, vector <Song>& songV)
 
 			inSS.clear(); // clears previous stream
 			inSS.str(tempInput); // enters new stream
+
+			input = tempInput; // keeps whole string stream for error report
 
 			while (getline(inSS, tempInput, ',')) { // breaks stream up into each section
 				row.push_back(tempInput); // assigns everything into row vector
