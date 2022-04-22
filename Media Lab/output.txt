@@ -1,0 +1,6 @@
+Error: Janelle Monae  
+Previous record has an stoi error.
+
+Error: Nancy Travis
+Previous record has an stoi error.
+
