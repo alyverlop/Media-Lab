@@ -7,14 +7,14 @@
 
 using namespace std;
 
-void ReadFile(vector<Book>& bookV, vector <Movie>& movieV, vector <Song>& songV);
+void ReadFile(istream& inFile, ostream& outFile, vector<Media*>& mediaLib);
 
 bool IsNumber(string input);
 
 char PrintMenu();
 
-void PrintBookList(vector<Book> bookV);
+void PrintBookList(vector<Media*>);
 
-void PrintMovieList(vector<Movie> movieV);
+void PrintMovieList(vector<Media*>);
 
-void PrintSongList(vector<Song> songV);
+void PrintSongList(vector<Media*>);

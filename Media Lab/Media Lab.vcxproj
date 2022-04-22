@@ -152,7 +152,7 @@
     <ClInclude Include="Media.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="movieList2.csv" />
+    <None Include="mediaList.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

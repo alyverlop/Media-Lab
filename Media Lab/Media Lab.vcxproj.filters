@@ -46,7 +46,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="movieList2.csv">
+    <None Include="mediaList.txt">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>

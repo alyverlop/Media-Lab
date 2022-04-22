@@ -5,11 +5,27 @@
 
 using namespace std;
 
+Media::Media() {
+	type = ' ';
+	title = " ";
+	rating = -1;
+	yearReleased = -1;
+	genre = " ";
+}
+
+Media::Media(char type, string t, int r, int y, string g) {
+	this->type = type;
+	title = t;
+	rating = r;
+	yearReleased = y;
+	genre = g;
+	cout << title << ":" << this->title << endl;
+}
 void Media::setType(char t) {
-	type = t;
+	this->type = t;
 }
 void Media:: setTitle(string t) {
-	title = t;
+	this->title = t;
 }
 void Media:: setRating(int r) {
 	rating = r;
@@ -19,6 +35,9 @@ void Media::setGenre(string g) {
 }
 void Media::setYear(int y) {
 	yearReleased = y;
+}
+void Media::setNum(int n) {
+	num = n;
 }
 
 char Media::getType() {
@@ -35,5 +54,12 @@ string Media::getGenre() {
 }
 int Media::getYear() {
 	return yearReleased;
+}
+int Media::getNum() {
+	return num;
+}
+
+void Media::print(ostream& o) {
+	o << "Media: " << endl;
 }
 
