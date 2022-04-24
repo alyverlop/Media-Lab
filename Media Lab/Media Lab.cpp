@@ -48,6 +48,7 @@ int main()
 			case 'F':
 			case 'f':
 				cout << "Enter the star's name:" << endl;
+				cin.ignore();
 				getline(cin, input);
 				ListStarsMovies(mediaLib, input);
 				break;

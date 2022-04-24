@@ -10,9 +10,12 @@ using namespace std;
 
 void ListMovieStars(vector<Media*> mediaLib, string input) {
 	for (int i = 0; i < mediaLib.size(); i++) {
-		if (input == mediaLib.at(i)->getTitle()) {
+		if (mediaLib.at(i)->getType() == 'M') {
 			mediaLib.at(i)->printStar(cout);
 			break; // leaves loop so it doesnt go through last test
+		}
+		else {
+			cout << "Sorry, that title is not a movie, and has no stars." << endl;
 		}
 		if (i == mediaLib.size() - 1 && input != mediaLib.at(i)->getTitle()) { // if end of list and no result
 			cout << "Sorry, the movie \"" << input << "\" could not be found in you library." << endl;
