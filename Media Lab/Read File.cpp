@@ -14,6 +14,7 @@ void ReadFile(istream& inFile, ostream& outFile, vector<Media*>& mediaLib) {
 
 	string inLine, title, director, genre, tempStr, testChar, name, author, artist;
 	int rating, duration, year, pages;
+	int num = 0;
 	vector<string> stars;
 	vector<string> row;
 	char choice = ' ';
@@ -26,15 +27,16 @@ void ReadFile(istream& inFile, ostream& outFile, vector<Media*>& mediaLib) {
 
 		//read data in string vector
 		row.clear();
+		stars.clear();
 		stringstream inSS(inLine);
 		while (getline(inSS, tempStr, ',')) {
 			row.push_back(tempStr);
 		}
-		if (testChar == "B") {
-			title = row[1];
+		if (testChar == "B") { //checks type
+			title = row[1]; //sets correct inputs
 			author = row[2];
 			genre = row[4];
-			try {
+			try { //catches errors if these rows are not integers
 				rating = stoi(row[3]);
 				pages = stoi(row[5]);
 				year = stoi(row[6]);
@@ -48,8 +50,9 @@ void ReadFile(istream& inFile, ostream& outFile, vector<Media*>& mediaLib) {
 				cout << a << endl;
 				exit(1);
 			}
-			char type = 'B';
-			Book* tempBook = new Book(type, title, author, rating, genre, pages, year);
+			char type = 'B'; //sets book into media vector
+			num++;
+			Book* tempBook = new Book(type, title, author, rating, genre, pages, year, num);
 
 			mediaLib.push_back(tempBook);
 			//mediaCounts[1] ++;
@@ -79,7 +82,8 @@ void ReadFile(istream& inFile, ostream& outFile, vector<Media*>& mediaLib) {
 			}
 
 			char type = 'M';
-			Movie* tempMovie = new Movie (type, title, director, rating, genre, duration, year, stars);
+			num++;
+			Movie* tempMovie = new Movie (type, title, director, rating, genre, duration, year, stars, num);
 
 			mediaLib.push_back(tempMovie);
 			//mediaCounts[1] ++;
@@ -103,7 +107,8 @@ void ReadFile(istream& inFile, ostream& outFile, vector<Media*>& mediaLib) {
 				exit(1);
 			}
 			char type = 'S';
-			Song* tempSong = new Song(type, title, artist, rating, genre, duration, year);
+			num++;
+			Song* tempSong = new Song(type, title, artist, rating, genre, duration, year, num);
 
 			mediaLib.push_back(tempSong);
 			//mediaCounts[1] ++;

@@ -16,7 +16,7 @@ protected:
 	int num;
 public:
 	Media();
-	Media(char, string, int, int, string);
+	Media(char, string, int, int, string, int);
 	void setType(char);
 	void setTitle(string);
 	void setRating(int);
@@ -31,7 +31,8 @@ public:
 	int getYear();
 	int getNum();
 
-	virtual void print(ostream& o);
+	virtual void print (ostream& o);
+	virtual void printList (ostream& o);
 };
 
 class Book : public Media {
@@ -41,7 +42,7 @@ private:
 
 public:
 	Book();
-	Book(char type, string t, string a, int r, string g, int p, int yr);
+	Book(char type, string t, string a, int r, string g, int p, int y, int n);
 
 	void setAuthor(string);
 	void setPages(int);
@@ -49,6 +50,7 @@ public:
 	string getAuthor();
 	int getPages();
 	void print(ostream& o);
+	void printList(ostream& o);
 };
 
 class Movie : public Media {
@@ -59,7 +61,7 @@ private:
 
 public:
 	Movie();
-	Movie(char, string, string, int, string, int, int, vector<string>);
+	Movie(char, string, string, int, string, int, int, vector<string>, int n);
 	void setDirector(string);
 	void setDuration(int);
 	void setStars(vector<string>);
@@ -69,6 +71,7 @@ public:
 	int getDuration();
 	
 	void print(ostream& o);
+	void printList(ostream& o);
 
 };
 
@@ -79,7 +82,7 @@ private:
 
 public:
 	Song();
-	Song(char type, string t, string a, int r, string g, int p, int yr);
+	Song(char type, string t, string a, int r, string g, int p, int y, int n);
 	void setArtist(string);
 	void setDuration(int);
 
@@ -87,6 +90,7 @@ public:
 	int getDuration();
 	void print();
 	void print(ostream& o);
+	void printList(ostream& o);
 };
 
 

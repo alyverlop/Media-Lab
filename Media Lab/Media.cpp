@@ -13,13 +13,14 @@ Media::Media() {
 	genre = " ";
 }
 
-Media::Media(char type, string t, int r, int y, string g) {
+Media::Media(char type, string t, int r, int y, string g, int n) {
 	this->type = type;
 	title = t;
 	rating = r;
 	yearReleased = y;
 	genre = g;
-	cout << title << ":" << this->title << endl;
+	num = n;
+	//cout << title << ":" << this->title << endl;
 }
 void Media::setType(char t) {
 	this->type = t;
@@ -59,7 +60,12 @@ int Media::getNum() {
 	return num;
 }
 
+
 void Media::print(ostream& o) {
+	o << "Media: " << endl;
+}
+
+void Media::printList (ostream& o) {
 	o << "Media: " << endl;
 }
 

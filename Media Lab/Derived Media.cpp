@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <iomanip>
 #include "Media.h"
 
 using namespace std;
@@ -12,8 +13,8 @@ Book::Book()
 	pages = 0;
 }
 
-Book::Book(char type, string t, string a, int r, string g, int p, int yr)
-	: Media(type, t, r, yr, g)
+Book::Book(char type, string t, string a, int r, string g, int p, int y, int n)
+	: Media(type, t, r, y, g, n)
 {
 	author = a;
 	pages = p;
@@ -34,6 +35,16 @@ int Book::getPages() {
 }
 
 void Book::print(ostream& o) {
+	o << setw(3) << right << num;
+	o << "  " << setw(42) << left << title;
+	o << setw(20) << right << author;
+	o << setw(7) << right << yearReleased;
+	o << setw(10) << right << rating;
+	o << setw(19) << right << genre;
+	o << setw(10) << right << pages << endl;
+}
+
+void Book::printList (ostream& o) {
 	o << "Book: " << title << " : " << author << endl;
 }
 
@@ -46,8 +57,8 @@ Movie::Movie()
 	stars = {};
 }
 
-Movie::Movie(char type, string t, string a, int r, string g, int d, int yr, vector<string> s)
-	: Media(type, t, r, yr, g)
+Movie::Movie(char type, string t, string a, int r, string g, int d, int y, vector<string> s, int n)
+	: Media(type, t, r, y, g, n)
 {
 	director = a;
 	duration = d;
@@ -76,8 +87,21 @@ int Movie::getDuration() {
 }
 
 void Movie::print(ostream& o) {
+	o << setw(3) << right << num;
+	o << "  " << setw(42) << left << title;
+	o << setw(20) << right << director;
+	o << setw(7) << right << yearReleased;
+	o << setw(10) << right << rating;
+	o << setw(19) << right << genre;
+	o << setw(10) << right << duration << endl;
+}
+
+void Movie::printList (ostream& o) {
 	o << "Movie: " << title << " : " << director << endl;
 }
+
+
+
 
 
 
@@ -88,8 +112,8 @@ Song:: Song()
 	duration = 0;
 }
 
-Song::Song(char type, string t, string a, int r, string g, int p, int yr)
-	:Media(type, t, r, yr, g)
+Song::Song(char type, string t, string a, int r, string g, int p, int y, int n)
+	:Media(type, t, r, y, g, n)
 {
 	artist = a;
 	duration = p;
@@ -111,5 +135,14 @@ void Song::print() {
 	return; 
 }
 void Song::print(ostream& o) { 
+	o << setw(3) << right << num;
+	o << "  " << setw(28) << left << title;
+	o << setw(35) << right << artist;
+	o << setw(7) << right << yearReleased;
+	o << setw(10) << right << rating;
+	o << setw(19) << right << genre;
+	o << setw(10) << right << duration << endl;
+}
+void Song::printList (ostream& o) {
 	o << "Song: " << title << " : " << artist << endl;
 }
