@@ -9,7 +9,7 @@
 using namespace std;
 
 
-void ReadFile(istream& inFile, ostream& outFile, vector<Media*>& mediaLib) {
+void ReadFile(istream& inFile, ostream& outFile, vector<Media*>& mediaLib, int mediaCounts[]) {
 	cout << "\n\n\nLoading Data File\n\n\n";
 
 	string inLine, title, director, genre, tempStr, testChar, name, author, artist;
@@ -55,7 +55,8 @@ void ReadFile(istream& inFile, ostream& outFile, vector<Media*>& mediaLib) {
 			Book* tempBook = new Book(type, title, author, rating, genre, pages, year, num);
 
 			mediaLib.push_back(tempBook);
-			//mediaCounts[1] ++;
+			mediaCounts[1] ++;
+			mediaCounts[0] ++;
 		}
 		
 
@@ -86,7 +87,8 @@ void ReadFile(istream& inFile, ostream& outFile, vector<Media*>& mediaLib) {
 			Movie* tempMovie = new Movie (type, title, director, rating, genre, duration, year, stars, num);
 
 			mediaLib.push_back(tempMovie);
-			//mediaCounts[1] ++;
+			mediaCounts[2] ++;
+			mediaCounts[0] ++;
 		}
 		if (testChar == "S") {
 			title = row[1];
@@ -111,7 +113,8 @@ void ReadFile(istream& inFile, ostream& outFile, vector<Media*>& mediaLib) {
 			Song* tempSong = new Song(type, title, artist, rating, genre, duration, year, num);
 
 			mediaLib.push_back(tempSong);
-			//mediaCounts[1] ++;
+			mediaCounts[3] ++;
+			mediaCounts[0] ++;
 		}
 
 

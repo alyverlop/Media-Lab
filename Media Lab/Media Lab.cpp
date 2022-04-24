@@ -11,16 +11,20 @@
 
 using namespace std;
 
+
 int main()
 {
 	vector<Media*> mediaLib;
 	ifstream inFile ("mediaList.txt");
 	ofstream outFile("output.txt");
+	int mediaCounts[4] = { 0,0,0,0 };
+
+	string input;
 
 	char choice;
 
 
-	ReadFile(inFile, outFile, mediaLib);
+	ReadFile(inFile, outFile, mediaLib, mediaCounts);
 
 	choice = PrintMenu();
 	while (choice != 'q' && choice != 'Q') {
@@ -39,12 +43,20 @@ int main()
 				break;
 			case 'A':
 			case 'a':
+				PrintList(mediaLib);
+				break;
 			case 'F':
 			case 'f':
 			case 'G':
 			case 'g':
+				cout << "Enter the movie name: ";
+				cin >> input;
+				ListMovieStars(mediaLib, input);
+				break;
 			case 'T':
 			case 't':
+				PrintTotal(mediaCounts);
+				break;
 			case 'Q':
 			case 'q':
 				break;

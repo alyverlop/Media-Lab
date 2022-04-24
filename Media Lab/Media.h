@@ -33,6 +33,7 @@ public:
 
 	virtual void print (ostream& o);
 	virtual void printList (ostream& o);
+	virtual void printStar(ostream& o);
 };
 
 class Book : public Media {
@@ -65,13 +66,13 @@ public:
 	void setDirector(string);
 	void setDuration(int);
 	void setStars(vector<string>);
-	void getStars();
 
 	string getDirector();
 	int getDuration();
 	
 	void print(ostream& o);
 	void printList(ostream& o);
+	void printStar(ostream& o);
 
 };
 

@@ -45,7 +45,11 @@ void Book::print(ostream& o) {
 }
 
 void Book::printList (ostream& o) {
-	o << "Book: " << title << " : " << author << endl;
+	o << setw(5) << type;
+	o << setw(3) << right << num;
+	o << "  " << setw(38) << left << title;
+	o << setw(7) << right << yearReleased;
+	o << setw(10) << right << rating << endl;
 }
 
 
@@ -73,11 +77,7 @@ void Movie::setDuration(int d) {
 void Movie::setStars(vector<string> s) {
 	stars = s;
 }
-void Movie::getStars() {
-	for (int i = 0; i < stars.size(); i++) {
-		cout << stars.at(i);
-	}
-}
+
 
 string Movie::getDirector() {
 	return director;
@@ -97,10 +97,19 @@ void Movie::print(ostream& o) {
 }
 
 void Movie::printList (ostream& o) {
-	o << "Movie: " << title << " : " << director << endl;
+	o << setw(5) << type;
+	o << setw(3) << right << num;
+	o << "  " << setw(38) << left << title;
+	o << setw(7) << right << yearReleased;
+	o << setw(10) << right << rating << endl;
 }
 
-
+void Movie::printStar(ostream& o) {
+	o << "The Stars of " << title << " are:" << endl;
+	for (int i = 0; i < stars.size(); i++) {
+		o << stars.at(i) << endl;
+	}
+}
 
 
 
@@ -136,13 +145,17 @@ void Song::print() {
 }
 void Song::print(ostream& o) { 
 	o << setw(3) << right << num;
-	o << "  " << setw(28) << left << title;
+	o << "  " << setw(31) << left << title;
 	o << setw(35) << right << artist;
 	o << setw(7) << right << yearReleased;
 	o << setw(10) << right << rating;
-	o << setw(19) << right << genre;
+	o << setw(21) << right << genre;
 	o << setw(10) << right << duration << endl;
 }
 void Song::printList (ostream& o) {
-	o << "Song: " << title << " : " << artist << endl;
+	o << setw(5) << type;
+	o << setw(3) << right << num;
+	o << "  " << setw(38) << left << title;
+	o << setw(7) << right << yearReleased;
+	o << setw(10) << right << rating << endl;
 }

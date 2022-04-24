@@ -69,3 +69,9 @@ void Media::printList (ostream& o) {
 	o << "Media: " << endl;
 }
 
+void Media::printStar(ostream& o) {
+	o << "Media: " << endl;
+}
+
+
+

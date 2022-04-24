@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Derived Media.cpp" />
     <ClCompile Include="isNumber.cpp" />
+    <ClCompile Include="List Stars.cpp" />
     <ClCompile Include="Media Lab.cpp" />
     <ClCompile Include="Media.cpp" />
     <ClCompile Include="Print Lists.cpp" />

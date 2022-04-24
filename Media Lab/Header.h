@@ -3,11 +3,12 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <array>
 #include "Media.h"
 
 using namespace std;
 
-void ReadFile(istream& inFile, ostream& outFile, vector<Media*>& mediaLib);
+void ReadFile(istream& inFile, ostream& outFile, vector<Media*>& mediaLib, int mediaCounts[]);
 
 bool IsNumber(string input);
 
@@ -18,3 +19,9 @@ void PrintBookList(vector<Media*>);
 void PrintMovieList(vector<Media*>);
 
 void PrintSongList(vector<Media*>);
+
+void PrintList(vector<Media*>);
+
+void PrintTotal(int mediaCounts[]);
+
+void ListMovieStars(vector<Media*>, string);

@@ -36,6 +36,9 @@
     <ClCompile Include="Print Lists.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="List Stars.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Media.h">
