@@ -34,6 +34,7 @@ public:
 	virtual void print (ostream& o);
 	virtual void printList (ostream& o);
 	virtual void printStar(ostream& o);
+	virtual vector<string> getStars();
 };
 
 class Book : public Media {
@@ -73,6 +74,7 @@ public:
 	void print(ostream& o);
 	void printList(ostream& o);
 	void printStar(ostream& o);
+	vector<string> getStars();
 
 };
 

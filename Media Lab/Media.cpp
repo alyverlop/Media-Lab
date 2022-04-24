@@ -73,5 +73,10 @@ void Media::printStar(ostream& o) {
 	o << "Media: " << endl;
 }
 
+vector<string> Media:: getStars() {
+	vector <string> temp;
+	return temp;
+}
+
 
 

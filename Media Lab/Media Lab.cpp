@@ -47,10 +47,14 @@ int main()
 				break;
 			case 'F':
 			case 'f':
+				cout << "Enter the star's name:" << endl;
+				getline(cin, input);
+				ListStarsMovies(mediaLib, input);
+				break;
 			case 'G':
 			case 'g':
-				cout << "Enter the movie name: ";
-				cin >> input;
+				cout << "Enter the movie name: " << endl;
+				getline(cin, input);
 				ListMovieStars(mediaLib, input);
 				break;
 			case 'T':

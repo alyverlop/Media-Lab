@@ -105,10 +105,15 @@ void Movie::printList (ostream& o) {
 }
 
 void Movie::printStar(ostream& o) {
-	o << "The Stars of " << title << " are:" << endl;
+	o << "The Stars of " << title << " are:" << endl << endl;
 	for (int i = 0; i < stars.size(); i++) {
 		o << stars.at(i) << endl;
 	}
+	o << endl;
+}
+
+vector<string> Movie::getStars() {
+	return stars;
 }
 
 

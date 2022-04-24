@@ -25,3 +25,5 @@ void PrintList(vector<Media*>);
 void PrintTotal(int mediaCounts[]);
 
 void ListMovieStars(vector<Media*>, string);
+
+void ListStarsMovies(vector <Media*> mediaLib, string input);
